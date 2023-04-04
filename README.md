@@ -37,11 +37,11 @@ has_one :purchase
 
 ## purchasesテーブル
 
-|Column  |Type      |Options                       |
-|--------|----------|------------------------------|
-|user_i  |references|null: false, foreign_key: true|
-|items_id|references|null: false, foreign_key: true|
-
+|Column    |Type      |Options                       |
+|----------|----------|------------------------------|
+|user_i    |references|null: false, foreign_key: true|
+|items_id  |references|null: false, foreign_key: true|
+|address_id|references|null: false, foreign_key: true|
 
 ### Association
 belongs_to :user
