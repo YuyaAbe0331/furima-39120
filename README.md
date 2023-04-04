@@ -37,6 +37,21 @@ has_one :purchase
 
 ## purchasesテーブル
 
+|Column  |Type      |Options                       |
+|--------|----------|------------------------------|
+|user_i  |references|null: false, foreign_key: true|
+|items_id|references|null: false, foreign_key: true|
+
+
+### Association
+belongs_to :user
+belongs_to :item
+belongs_to :address
+
+
+
+## addressesテーブル
+
 |Column        |Type      |Options                       |
 |--------------|----------|------------------------------|
 |post_code     |string    |null: false                   |
@@ -45,9 +60,7 @@ has_one :purchase
 |address       |string    |null: false                   |
 |building      |string    |                              |
 |telephone     |integer   |null: false                   |
-|user_id       |references|null: false, foreign_key: true|
-|items_id      |references|null: false, foreign_key: true|
+
 
 ### Association
-belongs_to :user
-belongs_to :item
+has_one :purchase
