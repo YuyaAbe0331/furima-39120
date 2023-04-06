@@ -54,7 +54,6 @@ RSpec.describe Item, type: :model do
       end
       it 'priceがない場合出品できない' do
         @item.price = ''
-        binding.pry
         @item.valid?
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
