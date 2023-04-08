@@ -29,7 +29,7 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       redirect_to new_user_session_path
-    end 
+    end
   end
 
   def update
@@ -39,7 +39,6 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
-
 
   private
 
@@ -51,5 +50,4 @@ class ItemsController < ApplicationController
   def set_item
     @item = Item.find(params[:id])
   end
-
 end
