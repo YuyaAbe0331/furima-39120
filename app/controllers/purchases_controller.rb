@@ -4,10 +4,7 @@ class PurchasesController < ApplicationController
   before_action :new_purchase_address, only: [:index, :new]
 
   def index
-    if @item.purchase
-      redirect_to root_path
-    else
-      current_user == @item.user
+    if @item.purchase || current_user == @item.user
       redirect_to root_path
     end
   end
