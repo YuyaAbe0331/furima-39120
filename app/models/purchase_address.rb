@@ -1,6 +1,6 @@
 class PurchaseAddress
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :post_code, :prefecture_id, :municipality, :address, :building, :telephone
+  attr_accessor :user_id, :item_id, :post_code, :prefecture_id, :municipality, :address, :building, :telephone, :token
 
   validates :user_id, presence: true
   validates :item_id, presence: true
@@ -9,6 +9,7 @@ class PurchaseAddress
   validates :municipality, presence: true
   validates :address, presence: true
   validates :telephone, presence: true, format: {with: /\A\d{10,11}\z/, message: "Input only number"}
+  validates :token, presence: true
 
   def save
     @purchase = Purchase.create(user_id: user_id, item_id: item_id)
