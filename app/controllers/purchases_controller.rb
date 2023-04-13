@@ -1,15 +1,12 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!, only: :index
   before_action :purchase_item, only: [:index, :create]
-  before_action :new_purchase_address, only: [:index, :new]
+  before_action :new_purchase_address, only: :index
 
   def index
     if @item.purchase || current_user == @item.user
       redirect_to root_path
     end
-  end
-
-  def new
   end
 
   def create
