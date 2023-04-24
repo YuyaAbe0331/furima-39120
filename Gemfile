@@ -64,6 +64,8 @@ gem 'image_processing', '~> 1.2'
 gem 'payjp'
 gem "aws-sdk-s3", require: false
 gem 'psych', '~> 3.1'
+gem 'mail', '2.7.1'
+
 
 group :production do
   gem 'unicorn', '5.4.1'
